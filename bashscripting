@@ -1,3 +1,10 @@
+![Untitled](https://prod-files-secure.s3.us-west-2.amazonaws.com/20905065-7447-4a8b-8b88-405e095078df/d586d517-3985-4d7c-8422-25d843e78587/Untitled.png)
+
+### check if the string is empty
+
+-z is the option through which we can check if the string is empty
+
+```bash
 read -p “type something” str
 if  [ -z  “str” ]; then
  echo "this is an empty string"
@@ -5,3 +12,49 @@ if  [ -z  “str” ]; then
 fi
 echo "moving on "
 
+```
+
+### condition to check if a files EXISTS
+
+```bash
+read -p “type file name ” file
+if  [ -e  “file” ]; then  #e=exists does not exist= ! eq
+ echo "this $file exists "
+  exit
+fi
+echo "does not exists "\
+```
+
+### condition to check if a file is directory
+
+```bash
+read -p “type file name ” file
+if  [ -d  “file” ]; then  
+ echo "this $file is directory "
+  exit
+fi
+echo "is not a directory"\
+```
+
+### condition to check if a file is readable
+
+```bash
+read -p “type file name ” file
+if  [ -r  “file” ]; then  ##-w writable
+ echo "this $file is readable "
+  exit
+fi
+echo "is not readable "\
+```
+
+### condition to check if a file is NOT EMPTY
+
+```bash
+read -p “type file name ” file
+if  [ -S  “file” ]; then  #e=exists does not exist= ! eq
+ echo "this $file is not empty which means data is in there "
+  exit
+else 
+echo "this file is empty"
+
+```
